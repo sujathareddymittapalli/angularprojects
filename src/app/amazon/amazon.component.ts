@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-
+import { DataService } from '../data.service';
 @Component({
   selector: 'app-amazon',
   templateUrl: './amazon.component.html',
@@ -15,13 +15,22 @@ export class AmazonComponent implements OnInit {
   }
 
 ]
-pdp(){
-  //alert("pdp");
-  this.router.navigate(['amazon2']);
+clothObject={
+  "title":"himalaya",
+  "year":"2013",
+  "poster":"pure",
+  "id":1
 }
-  constructor(private router:Router) { }
+
+  constructor(private router:Router, private data : DataService) { }
 
   ngOnInit(): void {
+  }
+
+  pdp(){
+    this.data.updateData(this.clothObject);
+
+    this.router.navigate(['amazon2']);
   }
 
 }
