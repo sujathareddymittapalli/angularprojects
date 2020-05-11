@@ -15,12 +15,7 @@ export class AmazonComponent implements OnInit {
   }
 
 ]
-clothObject={
-  "title":"himalaya",
-  "year":"2013",
-  "poster":"pure",
-  "id":1
-}
+
 
   constructor(private router:Router, private data : DataService) { }
 
@@ -28,8 +23,6 @@ clothObject={
   }
 
   pdp(){
-    this.data.updateData(this.clothObject);
-
     this.router.navigate(['amazon2']);
   }
 
